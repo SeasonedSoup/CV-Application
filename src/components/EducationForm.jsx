@@ -1,3 +1,5 @@
+import submitSvg from "../assets/check-bold.svg"
+import editSvg from "../assets/lead-pencil.svg"
 function EducationForm() {
     return (
         <form>
@@ -9,6 +11,14 @@ function EducationForm() {
 
             <label htmlFor="graduationDate">Date Of Graduation: </label>
             <input type="date" id="graduationDate" name="graduationDate"/>
+
+            <button type="submit"> 
+                <img src={submitSvg} alt="SubmitButton" style={{width: '20px', height: '20px'}}/>
+            </button>
+
+            <button type="button">
+                <img src={editSvg} alt="EditButton" style={{width: '20px', height: '20px'}} />
+            </button>
         </form>
     )
 }

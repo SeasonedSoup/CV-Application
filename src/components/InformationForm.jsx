@@ -1,3 +1,6 @@
+import submitSvg from "../assets/check-bold.svg"
+import editSvg from "../assets/lead-pencil.svg"
+
 function InformationForm() {
     return (
         <form>
@@ -10,6 +13,13 @@ function InformationForm() {
             <label htmlFor="telephone">Phone Number: </label>
             <input type="tel" id="telephone" name="telephone" />
 
+            <button type="submit"> 
+                <img src={submitSvg} alt="SubmitButton" style={{width: '20px', height: '20px'}}/>
+            </button>
+            
+            <button type="button">
+                <img src={editSvg} alt="EditButton" style={{width: '20px', height: '20px'}} />
+            </button>
         </form>
     )
 }
