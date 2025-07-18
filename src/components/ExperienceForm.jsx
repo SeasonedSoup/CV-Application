@@ -1,7 +1,11 @@
 import submitSvg from "../assets/check-bold.svg"
 import editSvg from "../assets/lead-pencil.svg"
 
+import { useState } from "react";
+
 function ExperienceForm() {
+
+
     return (
         <form>
             <label htmlFor="company">Company: </label>
@@ -16,7 +20,7 @@ function ExperienceForm() {
             <label htmlFor="endDate">End Date: </label>
             <input type="date" id="endDate" name="endDate"/>
 
-            <label htmlFor="jobDescription">Job Description: (describe what you have accomplished and your responsibilities) </label>
+            <label htmlFor="jobDescription">Job Description: <i>(describe what you have accomplished and your responsibilities) </i> </label>
             <textarea name="jobDescription" id="jobDescription"></textarea>
 
             <button type="submit"> 

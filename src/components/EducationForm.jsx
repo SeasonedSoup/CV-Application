@@ -1,5 +1,8 @@
 import submitSvg from "../assets/check-bold.svg"
 import editSvg from "../assets/lead-pencil.svg"
+
+import "../styles/form.css"
+
 function EducationForm() {
     return (
         <form>
