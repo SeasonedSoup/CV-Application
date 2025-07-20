@@ -3,22 +3,36 @@ import editSvg from "../assets/lead-pencil.svg"
 
 import { useState } from "react";
 
+function CustomInput({type, id, name}) {
+    const [value, setValue] = useState("");
+
+    return (
+        <input
+        type={type}
+        id={id}
+        name={name}
+        value={value}
+        onChange={(e) => {
+            console.log(e.target.value);
+            setValue(e.target.value)
+        }}
+        />
+    )
+}
 function ExperienceForm() {
-
-
     return (
         <form>
             <label htmlFor="company">Company: </label>
-            <input type="text" id="company" name="company"/>
+            <CustomInput type="text" id="company" name="company"/>
             
             <label htmlFor="jobTitle">Job Title: </label>
             <input type="text" id="jobTitle" name="jobTitle"/>
             
             <label htmlFor="startDate">Start Date: </label>
-            <input type="date" id="startDate" name="startDate"/>
+            <CustomInput type="date" id="startDate" name="startDate"/>
 
             <label htmlFor="endDate">End Date: </label>
-            <input type="date" id="endDate" name="endDate"/>
+            <CustomInput type="date" id="endDate" name="endDate"/>
 
             <label htmlFor="jobDescription">Job Description: <i>(describe what you have accomplished and your responsibilities) </i> </label>
             <textarea name="jobDescription" id="jobDescription"></textarea>
