@@ -1,17 +1,32 @@
 import submitSvg from "../assets/check-bold.svg"
 import editSvg from "../assets/lead-pencil.svg"
 
-function InformationForm() {
+function CustomInput({type, id, name, value, onChange}) {
+
+    return (
+        <input
+        type={type}
+        id={id}
+        name={name}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        />
+    )
+}
+function InformationForm({infoData, setData}) {
+    const handleChange = (field, value) => {
+        setData((prev) => ({...prev, [field]:value}))
+    }
     return (
         <form>
             <label htmlFor="name">Name: </label>
-            <input type="text" id="name" name="name" />
+            <CustomInput type="text" id="name" name="name" value={infoData.name} onChange={(val) => handleChange("name", val) }/>
 
             <label htmlFor="email">Email: </label>
-            <input type="email" id="email" name="email" />
+            <CustomInput type="email" id="email" name="email" />
 
             <label htmlFor="telephone">Phone Number: </label>
-            <input type="tel" id="telephone" name="telephone" />
+            <CustomInput type="tel" id="telephone" name="telephone" />
 
             <button type="submit"> 
                 <img src={submitSvg} alt="SubmitButton" style={{width: '20px', height: '20px'}}/>
