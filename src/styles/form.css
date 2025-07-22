@@ -3,3 +3,12 @@ form {
     flex-direction: column;
     gap: 10%;
 }
+
+.app {
+    display: flex;
+}
+
+.cv {
+    display: flex;
+    flex-direction: column;
+}

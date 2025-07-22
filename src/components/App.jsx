@@ -8,22 +8,36 @@ import CvResult from "./CVResult";
 import "../styles/form.css"
 
 const App = () => {
-
-  const [infoData, setInfo] = useState({
+  //THREE STATES FROM THREE DIFFERENT SECTIONS OF THE FORM
+  const [infoData, setInfoData] = useState({
     name:"",
     email:"",
     telephone:""
   })
+
+  const [educationData, setEducationData] = useState({
+    schoolName:"",
+    areaOfStudy:"",
+    graduationDate:""
+  })
+
+  const [experienceData, setExperienceData] = useState({
+    company: "",
+    jobTitle: "",
+    startDate: "",
+    endDate: ""
+  })
+
   return (
-    <>
+    <div className="app">
         <div className="submitForm">
           <h1>CV Application</h1>
-          <InformationForm infoData={infoData} setData={setInfo} />
-          <EducationForm />
-          <ExperienceForm />
-          <CvResult infoData={infoData}/>
+          <InformationForm data={infoData} setData={setInfoData} />
+          <EducationForm data={educationData} setData={setEducationData}/>
+          <ExperienceForm data={experienceData} setData={setExperienceData}/>
         </div>
-    </>
+        <CvResult infoData={infoData} eduData={educationData} expData={experienceData}/>
+    </div>
 
   )
 }

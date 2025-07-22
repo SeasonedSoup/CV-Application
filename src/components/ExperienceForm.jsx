@@ -1,35 +1,34 @@
 import submitSvg from "../assets/check-bold.svg"
 import editSvg from "../assets/lead-pencil.svg"
 
-import { useState } from "react";
-
-function CustomInput({type, id, name}) {
-    const [value, setValue] = useState("");
-
+function CustomInput({type, id, name, value, updateData}) {
     return (
         <input
         type={type}
         id={id}
         name={name}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => updateData(e.target.value)}
         />
     )
 }
-function ExperienceForm() {
+function ExperienceForm({data, setData}) {
+    function handleChange(field, value) {
+        setData((prev) => ({...prev, [field]: value}))
+    }
     return (
         <form>
             <label htmlFor="company">Company: </label>
-            <CustomInput type="text" id="company" name="company"/>
+            <CustomInput type="text" id="company" name="company" value={data.company} updateData={(e) => handleChange("company", e)}/>
             
             <label htmlFor="jobTitle">Job Title: </label>
-            <input type="text" id="jobTitle" name="jobTitle"/>
+            <CustomInput type="text" id="jobTitle" name="jobTitle" value={data.jobTitle} updateData={(e) => handleChange("jobTitle", e)}/>
             
             <label htmlFor="startDate">Start Date: </label>
-            <CustomInput type="date" id="startDate" name="startDate"/>
+            <CustomInput type="date" id="startDate" name="startDate" value={data.startDate} updateData={(e) => handleChange("startDate", e)}/>
 
             <label htmlFor="endDate">End Date: </label>
-            <CustomInput type="date" id="endDate" name="endDate"/>
+            <CustomInput type="date" id="endDate" name="endDate" value={data.endDate} updateData={(e) => handleChange("endDate", e)}/>
 
             <label htmlFor="jobDescription">Job Description: <i>(describe what you have accomplished and your responsibilities) </i> </label>
             <textarea name="jobDescription" id="jobDescription"></textarea>
