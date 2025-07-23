@@ -19,6 +19,7 @@ function CvResult({infoData, eduData, expData}) {
             <h1>Job Title: {expData.jobTitle}</h1>
             <h1>Start Date: {expData.startDate}</h1>
             <h1>End Date: {expData.endDate}</h1>
+            <h1>Job Description: {expData.jobDescription}</h1>
         </div>
     </div>
     )

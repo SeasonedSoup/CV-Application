@@ -25,7 +25,8 @@ const App = () => {
     company: "",
     jobTitle: "",
     startDate: "",
-    endDate: ""
+    endDate: "",
+    jobDescription:""
   })
 
   return (

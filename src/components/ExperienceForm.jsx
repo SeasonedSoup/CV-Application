@@ -12,6 +12,17 @@ function CustomInput({type, id, name, value, updateData}) {
         />
     )
 }
+
+function CustomTextArea({id,name, value, updateData}) {
+    return (
+        <textarea 
+        name={name} 
+        id={id}
+        value={value}
+        onChange={(e) => updateData(e.target.value)}
+        ></textarea>
+    )
+}
 function ExperienceForm({data, setData}) {
     function handleChange(field, value) {
         setData((prev) => ({...prev, [field]: value}))
@@ -31,7 +42,7 @@ function ExperienceForm({data, setData}) {
             <CustomInput type="date" id="endDate" name="endDate" value={data.endDate} updateData={(e) => handleChange("endDate", e)}/>
 
             <label htmlFor="jobDescription">Job Description: <i>(describe what you have accomplished and your responsibilities) </i> </label>
-            <textarea name="jobDescription" id="jobDescription"></textarea>
+            <CustomTextArea name="jobDescription" id="jobDescription" value={data.jobDescription} updateData={(e) => handleChange("jobDescription", e)}></CustomTextArea>
 
             <button type="submit"> 
                 <img src={submitSvg} alt="SubmitButton" style={{width: '20px', height: '20px'}}/>
