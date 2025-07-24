@@ -37,7 +37,9 @@ const App = () => {
           <EducationForm data={educationData} setData={setEducationData}/>
           <ExperienceForm data={experienceData} setData={setExperienceData}/>
         </div>
-        <CvResult infoData={infoData} eduData={educationData} expData={experienceData}/>
+        <div className="resume">
+          <CvResult infoData={infoData} eduData={educationData} expData={experienceData}/>
+        </div>
     </div>
 
   )
