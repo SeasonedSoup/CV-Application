@@ -13,7 +13,7 @@ function CustomInput({type, id, name, value, updateData}) {
         />
     )
 }
-function EducationForm({data, setData}) {
+function EducationForm({data, setData, submitted, setSubmitted}) {
     const [formData, setFormData] = useState({
         schoolName: data.schoolName,
         areaOfStudy: data.areaOfStudy,
@@ -30,7 +30,16 @@ function EducationForm({data, setData}) {
     const handleChange = (field, value) => {
         setFormData((prev) => ({...prev, [field]: value}))
     }
-
+    if (submitted) {
+        return ( 
+            <>
+                <h1>Form Finished! Edit Here -&gt;</h1>
+                <button type="button" onClick={() => setSubmitted(prev => ({...prev, education: false})) }>
+                    <img src={editSvg} alt="EditButton" style={{width: '20px', height: '20px'}} />
+                </button>
+            </>
+        )
+    } 
     return (
         <form onSubmit={handleSubmit}>
             <label htmlFor="schoolName">School Name:</label>
@@ -44,10 +53,6 @@ function EducationForm({data, setData}) {
 
             <button type="submit"> 
                 <img src={submitSvg} alt="SubmitButton" style={{width: '20px', height: '20px'}}/>
-            </button>
-
-            <button type="button">
-                <img src={editSvg} alt="EditButton" style={{width: '20px', height: '20px'}} />
             </button>
         </form>
     )
