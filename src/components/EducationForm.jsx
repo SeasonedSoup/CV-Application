@@ -1,3 +1,4 @@
+import { useState } from "react"
 import submitSvg from "../assets/check-bold.svg"
 import editSvg from "../assets/lead-pencil.svg"
 
@@ -13,19 +14,33 @@ function CustomInput({type, id, name, value, updateData}) {
     )
 }
 function EducationForm({data, setData}) {
-    function handleChange(field, value) {
-        setData((prev) => ({...prev, [field]: value}))
+    const [formData, setFormData] = useState({
+        schoolName: data.schoolName,
+        areaOfStudy: data.areaOfStudy,
+        graduationDate: data.graduationDate
+    })
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        setData((prev) => ({...prev, ...formData})) 
+        setFormData((prev) => ({...prev, schoolName: "", areaOfStudy: "", graduationDate: "" }))
     }
+
+    const handleChange = (field, value) => {
+        setFormData((prev) => ({...prev, [field]: value}))
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <label htmlFor="schoolName">School Name:</label>
-            <CustomInput type="text" id="schoolName" name="schoolName" value={data.schoolName} updateData={(e) => handleChange("schoolName", e)}/>
+            <CustomInput type="text" id="schoolName" name="schoolName" value={formData.schoolName} updateData={(value) => handleChange("schoolName", value)}/>
 
             <label htmlFor="areaOfStudy">Area Of Study:</label>
-            <CustomInput type="text" id="areaOfStudy" name="areaOfStudy" value={data.areaOfStudy} updateData={(e) => handleChange("areaOfStudy", e)}/>
+            <CustomInput type="text" id="areaOfStudy" name="areaOfStudy" value={formData.areaOfStudy} updateData={(value) => handleChange("areaOfStudy", value)}/>
 
             <label htmlFor="graduationDate">Date Of Graduation: </label>
-            <CustomInput type="date" id="graduationDate" name="graduationDate" value={data.graduationDate} updateData={(e) => handleChange("graduationDate", e)}/>
+            <CustomInput type="date" id="graduationDate" name="graduationDate" value={formData.graduationDate} updateData={(value) => handleChange("graduationDate", value)}/>
 
             <button type="submit"> 
                 <img src={submitSvg} alt="SubmitButton" style={{width: '20px', height: '20px'}}/>

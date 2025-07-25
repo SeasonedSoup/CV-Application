@@ -25,5 +25,5 @@ form {
     background-color: whitesmoke;
     min-width: 500px;
     max-width: 500px;
-    text-overflow:clip;
+    overflow: auto;
 }

@@ -30,19 +30,19 @@ function ExperienceForm({data, setData}) {
     return (
         <form>
             <label htmlFor="company">Company: </label>
-            <CustomInput type="text" id="company" name="company" value={data.company} updateData={(e) => handleChange("company", e)}/>
+            <CustomInput type="text" id="company" name="company" value={data.company} updateData={(value) => handleChange("company", value)}/>
             
             <label htmlFor="jobTitle">Job Title: </label>
-            <CustomInput type="text" id="jobTitle" name="jobTitle" value={data.jobTitle} updateData={(e) => handleChange("jobTitle", e)}/>
+            <CustomInput type="text" id="jobTitle" name="jobTitle" value={data.jobTitle} updateData={(value) => handleChange("jobTitle", value)}/>
             
             <label htmlFor="startDate">Start Date: </label>
-            <CustomInput type="date" id="startDate" name="startDate" value={data.startDate} updateData={(e) => handleChange("startDate", e)}/>
+            <CustomInput type="date" id="startDate" name="startDate" value={data.startDate} updateData={(value) => handleChange("startDate", value)}/>
 
             <label htmlFor="endDate">End Date: </label>
-            <CustomInput type="date" id="endDate" name="endDate" value={data.endDate} updateData={(e) => handleChange("endDate", e)}/>
+            <CustomInput type="date" id="endDate" name="endDate" value={data.endDate} updateData={(value) => handleChange("endDate", value)}/>
 
             <label htmlFor="jobDescription">Job Description: <i>(describe what you have accomplished and your responsibilities) </i> </label>
-            <CustomTextArea name="jobDescription" id="jobDescription" value={data.jobDescription} updateData={(e) => handleChange("jobDescription", e)}></CustomTextArea>
+            <CustomTextArea name="jobDescription" id="jobDescription" value={data.jobDescription} updateData={(value) => handleChange("jobDescription", value)}></CustomTextArea>
 
             <button type="submit"> 
                 <img src={submitSvg} alt="SubmitButton" style={{width: '20px', height: '20px'}}/>
