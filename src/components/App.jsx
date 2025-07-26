@@ -31,8 +31,8 @@ const App = () => {
 
   const [submitted, setSubmitted] = useState({
     info: false,
-    education: true,
-    experienceData: false
+    education: false,
+    experience: false
   })
 
   return (
@@ -41,7 +41,7 @@ const App = () => {
           <h1>CV Application</h1>
           <InformationForm data={infoData} setData={setInfoData} />
           <EducationForm data={educationData} setData={setEducationData} submitted={submitted.education} setSubmitted={setSubmitted}/>
-          <ExperienceForm data={experienceData} setData={setExperienceData}/>
+          <ExperienceForm data={experienceData} setData={setExperienceData} submitted={submitted.experience} setSubmitted={setSubmitted}/>
         </div>
         <div className="resume">
           <CvResult infoData={infoData} eduData={educationData} expData={experienceData}/>

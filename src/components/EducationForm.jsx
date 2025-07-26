@@ -24,7 +24,7 @@ function EducationForm({data, setData, submitted, setSubmitted}) {
         e.preventDefault();
 
         setData((prev) => ({...prev, ...formData})) 
-        setFormData((prev) => ({...prev, schoolName: "", areaOfStudy: "", graduationDate: "" }))
+        setSubmitted(prev => ({...prev, education: true}))
     }
 
     const handleChange = (field, value) => {
