@@ -39,7 +39,7 @@ const App = () => {
     <div className="app">
         <div className="submitForm">
           <h1>CV Application</h1>
-          <InformationForm data={infoData} setData={setInfoData} />
+          <InformationForm data={infoData} setData={setInfoData} submitted={submitted.info} setSubmitted={setSubmitted}/>
           <EducationForm data={educationData} setData={setEducationData} submitted={submitted.education} setSubmitted={setSubmitted}/>
           <ExperienceForm data={experienceData} setData={setExperienceData} submitted={submitted.experience} setSubmitted={setSubmitted}/>
         </div>
