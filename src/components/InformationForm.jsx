@@ -45,7 +45,7 @@ function InformationForm({data, setData, submitted, setSubmitted}) {
     if (submitted) {
         return (
             <>
-                <h1>Form submitted! Click Here to Edit</h1>
+                <h1>Form submitted. Click Here to Edit!</h1>
                 <button type="button" onClick={() => setSubmitted(prev => ({...prev, info:false}))}>
                     <img src={editSvg} alt="EditButton" style={{width: '20px', height: '20px'}} />
                 </button>
@@ -55,14 +55,21 @@ function InformationForm({data, setData, submitted, setSubmitted}) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Name: </label>
-            <CustomInput type="text" id="name" name="name" value={formData.name} updateData={(value) => handleChange("name", value) }/>
-
-            <label htmlFor="email">Email: </label>
-            <CustomInput type="email" id="email" name="email" value={formData.email} updateData={(value) => handleChange("email", value) }/>
-
-            <label htmlFor="telephone">Phone Number: </label>
-            <CustomInput type="tel" id="telephone" name="telephone" value={formData.telephone} updateData={(value) => handleChange("telephone", value)}/>
+            <p className="input">
+                <label htmlFor="name">Name: </label>
+                <CustomInput type="text" id="name" name="name" value={formData.name} 
+                updateData={(value) => handleChange("name", value) }/>
+            </p>
+            <p className="input">
+                <label htmlFor="email">Email: </label>
+                <CustomInput type="email" id="email" name="email" value={formData.email} 
+                updateData={(value) => handleChange("email", value) }/>
+            </p>
+            <p className="input">
+                <label htmlFor="telephone">Phone Number: </label>
+                <CustomInput type="tel" id="telephone" name="telephone" value={formData.telephone} 
+                updateData={(value) => handleChange("telephone", value)}/>
+            </p>
 
             <button type="submit"> 
                 <img src={submitSvg} alt="SubmitButton" style={{width: '20px', height: '20px'}}/>

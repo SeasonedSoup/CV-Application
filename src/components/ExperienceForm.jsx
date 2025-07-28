@@ -47,7 +47,7 @@ function ExperienceForm({data, setData, submitted, setSubmitted}) {
     if (submitted) {
         return (
             <>
-                <h1>Form is Finished Click Here To Edit!</h1>
+                <h1>Form Submitted. Click Here To Edit!</h1>
                 <button type="button" onClick={() => setSubmitted(prev => ({...prev, experience: false})) }>
                     <img src={editSvg} alt="EditButton" style={{width: '20px', height: '20px'}} />
                 </button>
@@ -57,20 +57,31 @@ function ExperienceForm({data, setData, submitted, setSubmitted}) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="company">Company: </label>
-            <CustomInput type="text" id="company" name="company" value={formData.company} updateData={(value) => handleChange("company", value)}/>
-            
-            <label htmlFor="jobTitle">Job Title: </label>
-            <CustomInput type="text" id="jobTitle" name="jobTitle" value={formData.jobTitle} updateData={(value) => handleChange("jobTitle", value)}/>
-            
+            <p className="input">
+                <label htmlFor="company">Company: </label>
+                <CustomInput type="text" id="company" name="company" value={formData.company} 
+                updateData={(value) => handleChange("company", value)}/>
+            </p>
+            <p className="input">
+                <label htmlFor="jobTitle">Job Title: </label>
+                <CustomInput type="text" id="jobTitle" name="jobTitle" value={formData.jobTitle} 
+                updateData={(value) => handleChange("jobTitle", value)}/>
+            </p>
+            <p className="input">
             <label htmlFor="startDate">Start Date: </label>
-            <CustomInput type="date" id="startDate" name="startDate" value={formData.startDate} updateData={(value) => handleChange("startDate", value)}/>
+            <CustomInput type="date" id="startDate" name="startDate" value={formData.startDate} 
+            updateData={(value) => handleChange("startDate", value)}/>
+            </p>
 
+            <p className="input">
             <label htmlFor="endDate">End Date: </label>
-            <CustomInput type="date" id="endDate" name="endDate" value={formData.endDate} updateData={(value) => handleChange("endDate", value)}/>
+            <CustomInput type="date" id="endDate" name="endDate" value={formData.endDate} 
+            updateData={(value) => handleChange("endDate", value)}/>
+            </p>
 
             <label htmlFor="jobDescription">Job Description: <i>(describe what you have accomplished and your responsibilities) </i> </label>
-            <CustomTextArea name="jobDescription" id="jobDescription" value={formData.jobDescription} updateData={(value) => handleChange("jobDescription", value)}></CustomTextArea>
+            <CustomTextArea name="jobDescription" id="jobDescription" value={formData.jobDescription} 
+            updateData={(value) => handleChange("jobDescription", value)}></CustomTextArea>
 
             <button type="submit"> 
                 <img src={submitSvg} alt="SubmitButton" style={{width: '20px', height: '20px'}}/>

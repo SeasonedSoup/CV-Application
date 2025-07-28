@@ -33,7 +33,7 @@ function EducationForm({data, setData, submitted, setSubmitted}) {
     if (submitted) {
         return ( 
             <>
-                <h1>Form Finished! Edit Here -&gt;</h1>
+                <h1>Form Submitted. Click Here to Edit!</h1>
                 <button type="button" onClick={() => setSubmitted(prev => ({...prev, education: false})) }>
                     <img src={editSvg} alt="EditButton" style={{width: '20px', height: '20px'}} />
                 </button>
@@ -42,14 +42,21 @@ function EducationForm({data, setData, submitted, setSubmitted}) {
     } 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="schoolName">School Name:</label>
-            <CustomInput type="text" id="schoolName" name="schoolName" value={formData.schoolName} updateData={(value) => handleChange("schoolName", value)}/>
-
-            <label htmlFor="areaOfStudy">Area Of Study:</label>
-            <CustomInput type="text" id="areaOfStudy" name="areaOfStudy" value={formData.areaOfStudy} updateData={(value) => handleChange("areaOfStudy", value)}/>
-
-            <label htmlFor="graduationDate">Date Of Graduation: </label>
-            <CustomInput type="date" id="graduationDate" name="graduationDate" value={formData.graduationDate} updateData={(value) => handleChange("graduationDate", value)}/>
+            <p className="input">
+                <label htmlFor="schoolName">School Name:</label>
+                <CustomInput type="text" id="schoolName" name="schoolName" value={formData.schoolName} 
+                updateData={(value) => handleChange("schoolName", value)}/>
+            </p>
+            <p className="input">
+                <label htmlFor="areaOfStudy">Area Of Study:</label>
+                <CustomInput type="text" id="areaOfStudy" name="areaOfStudy" value={formData.areaOfStudy} 
+                updateData={(value) => handleChange("areaOfStudy", value)}/>
+            </p>
+            <p className="input">
+                <label htmlFor="graduationDate">Date Of Graduation: </label>
+                <CustomInput type="date" id="graduationDate" name="graduationDate" value={formData.graduationDate} 
+                updateData={(value) => handleChange("graduationDate", value)}/>
+            </p>
 
             <button type="submit"> 
                 <img src={submitSvg} alt="SubmitButton" style={{width: '20px', height: '20px'}}/>
