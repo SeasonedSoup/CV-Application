@@ -1,6 +1,7 @@
 import { useState } from "react"
 import submitSvg from "../assets/check-bold.svg"
-import editSvg from "../assets/lead-pencil.svg"
+
+import FinishedForm from "./FinishedForm"
 
 function CustomInput({type, id, name, value, updateData}) {
     return (
@@ -46,12 +47,7 @@ function ExperienceForm({data, setData, submitted, setSubmitted}) {
     }
     if (submitted) {
         return (
-            <>
-                <h1>Form Submitted. Click Here To Edit!</h1>
-                <button type="button" onClick={() => setSubmitted(prev => ({...prev, experience: false})) }>
-                    <img src={editSvg} alt="EditButton" style={{width: '20px', height: '20px'}} />
-                </button>
-            </>
+            <FinishedForm setSubmitted={setSubmitted} formType={"experience"}/>
         )
     }
 
@@ -79,7 +75,7 @@ function ExperienceForm({data, setData, submitted, setSubmitted}) {
             updateData={(value) => handleChange("endDate", value)}/>
             </p>
 
-            <label htmlFor="jobDescription">Job Description: <i>(describe what you have accomplished and your responsibilities) </i> </label>
+            <label htmlFor="jobDescription">Job Description:</label>
             <CustomTextArea name="jobDescription" id="jobDescription" value={formData.jobDescription} 
             updateData={(value) => handleChange("jobDescription", value)}></CustomTextArea>
 

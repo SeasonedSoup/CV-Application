@@ -1,6 +1,6 @@
 import { useState } from "react";
 import submitSvg from "../assets/check-bold.svg"
-import editSvg from "../assets/lead-pencil.svg"
+import FinishedForm from "./FinishedForm";
 
 function CustomInput({type, pattern, id, name, value, updateData}) {
     const handleInput = (e) => {
@@ -44,12 +44,7 @@ function InformationForm({data, setData, submitted, setSubmitted}) {
 
     if (submitted) {
         return (
-            <>
-                <h1>Form submitted. Click Here to Edit!</h1>
-                <button type="button" onClick={() => setSubmitted(prev => ({...prev, info:false}))}>
-                    <img src={editSvg} alt="EditButton" style={{width: '20px', height: '20px'}} />
-                </button>
-            </>
+            <FinishedForm setSubmitted={setSubmitted} formType={"info"}/>
         )
     }
 

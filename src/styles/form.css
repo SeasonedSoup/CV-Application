@@ -1,21 +1,26 @@
+
 .app {
     display: flex;
     gap: 10%;
+    height: 100vh;
 }
 
 .submitForm {
     background-color: whitesmoke;
     border-radius: 12px;
-    flex-basis: 700px;
 
     display: flex;
     flex-direction: column;
+    padding: 1rem 2rem 0 2rem;
+}
+
+.title {
+    text-align: center;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 label {
@@ -28,7 +33,7 @@ p.input {
 }
 
 input {
-    width: 500px;
+    min-width: 500px;
     border: 1px solid gray;
     padding: 6px;
 }
@@ -36,16 +41,31 @@ input {
 textarea {
     resize: none;
     height: auto;
+    min-width: 500px;
+    min-height: 100px;
+}
+
+button {
+    padding: 12px;
+    border: solid 2px white;
+    background-color: royalblue;
+    border-radius: 12px;
+}
+
+img {
+    filter: invert(100%);
 }
 
 /* Result */
 .resume {
     flex-grow: 2;
+    background: no-repeat cover url(../assets/pexels-bithinrajxlr8-1786306.jpg)
 }
 .cv {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+
     border-radius: 20px;
-    background-color: whitesmoke;
     overflow: auto;
 }
