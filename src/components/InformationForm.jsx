@@ -44,7 +44,7 @@ function InformationForm({data, setData, submitted, setSubmitted}) {
 
     if (submitted) {
         return (
-            <FinishedForm setSubmitted={setSubmitted} formType={"info"}/>
+            <FinishedForm setSubmitted={setSubmitted} formType={"info"} formName={"Information"}/>
         )
     }
 

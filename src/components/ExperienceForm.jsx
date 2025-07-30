@@ -47,7 +47,7 @@ function ExperienceForm({data, setData, submitted, setSubmitted}) {
     }
     if (submitted) {
         return (
-            <FinishedForm setSubmitted={setSubmitted} formType={"experience"}/>
+            <FinishedForm setSubmitted={setSubmitted} formType={"experience"} formName={"Experience"}/>
         )
     }
 

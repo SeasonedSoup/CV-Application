@@ -32,7 +32,7 @@ function EducationForm({data, setData, submitted, setSubmitted}) {
     }
     if (submitted) {
         return ( 
-            <FinishedForm setSubmitted={setSubmitted} formType={"education"}/>
+            <FinishedForm setSubmitted={setSubmitted} formType={"education"} formName={"Education"}/>
         )
     } 
     return (
