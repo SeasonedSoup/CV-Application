@@ -49,7 +49,7 @@ function InformationForm({data, setData, submitted, setSubmitted}) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="noBorderForm" onSubmit={handleSubmit}>
             <p className="input">
                 <label htmlFor="name">Name: </label>
                 <CustomInput type="text" id="name" name="name" value={formData.name} 

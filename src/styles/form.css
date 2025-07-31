@@ -28,6 +28,10 @@ form {
     border-top: 6px solid gray;
 }
 
+.noBorderForm {
+    border: none;
+}
+
 label {
     font-size: 1.2rem;
 }
@@ -71,7 +75,13 @@ img {
 .resume {
     background-color: white;
     border-radius: 12px;
+    border: solid 2px black;
+    box-shadow: 8px 14px 8px rgb(0, 0, 0, 0.1);
+
+
     flex-basis: 500px;
+    flex-grow: 2;
+    max-width: 800px;
     padding: 2rem;
 }
 .cv {
@@ -81,4 +91,19 @@ img {
 
     border-radius: 20px;
     overflow: auto;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+.personName {
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contacts {
+    color: gray;
+    text-align: center;
 }
