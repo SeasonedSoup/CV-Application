@@ -1,4 +1,6 @@
 
+/* Entire input and form layout css looks thingy */
+
 .app {
     display: flex;
     gap: 10%;
@@ -15,6 +17,7 @@
     flex-direction: column;
     padding: 1rem 2rem 0 2rem;
     overflow-y: scroll;
+    flex-grow: 2;
 }
 
 .title {
@@ -42,7 +45,6 @@ p.input {
 }
 
 input {
-    min-width: 500px;
     border: 1px solid gray;
     padding: 6px;
 }
@@ -71,7 +73,21 @@ img {
 
 }
 
-/* Result */
+/* Specific To Experience Form */
+
+.formContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputColumn {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 350px;
+}
+
+/* Resume Result CSS*/
 .resume {
     background-color: white;
     border-radius: 12px;
@@ -89,13 +105,26 @@ img {
     flex-direction: column;
     gap: 2rem;
 
-    border-radius: 20px;
     overflow: auto;
 }
 
 .header {
     display: flex;
     flex-direction: column;
+}
+
+.resultTitle {
+    font-size: x-large;
+    border-bottom: solid 4px black;
+}
+
+.educationHeader, .experienceHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details {
+    color: gray;
 }
 .personName {
     font-size: xx-large;
@@ -106,4 +135,8 @@ img {
 .contacts {
     color: gray;
     text-align: center;
+}
+
+.dateWorked {
+    display: flex;
 }

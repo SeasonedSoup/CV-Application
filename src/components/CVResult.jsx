@@ -5,17 +5,26 @@ function CvResult({infoData, eduData, expData}) {
             <p className="personName"> {infoData.name}</p>
             <i className="contacts">{infoData.email} | {infoData.telephone}</i>    
         </div>
-        <div className="section">
-            <h2>School Name: {eduData.schoolName}</h2>
-            <h2>Area of Study: {eduData.areaOfStudy}</h2>
-            <h2>Graduation Date: {eduData.graduationDate}</h2>
+        <div className="education">
+            <p className="resultTitle">Education</p>
+            <div className="educationHeader">  
+                <h2>{eduData.schoolName}</h2>
+                <p>{eduData.graduationDate}</p>
+            </div>
+            <p className="details">{eduData.areaOfStudy}</p>
         </div>
-        <div className="section">
-            <h2>Company Name: {expData.company}</h2>
-            <h2>Job Title: {expData.jobTitle}</h2>
-            <h2>Start Date: {expData.startDate}</h2>
-            <h2>End Date: {expData.endDate}</h2>
-            <h2>Job Description: {expData.jobDescription}</h2>
+        <div className="experience">
+            <p className="resultTitle">Experience</p>
+            <div className="experienceHeader">  
+                <h2>{expData.company}</h2>
+                <div className="dateWorked">
+                    <p>{expData.startDate}</p>
+                    –
+                    <p>{expData.endDate}</p>
+                </div>
+            </div>
+            <p className="details">{expData.jobTitle}</p>
+            <p className="details">{expData.jobDescription}</p>
         </div>
     </div>
     )
