@@ -1,5 +1,7 @@
 import { useState } from "react";
 import submitSvg from "../assets/check-bold.svg"
+import clearSvg from "../assets/eraser.svg"
+
 import FinishedForm from "./FinishedForm";
 
 function CustomInput({type, pattern, id, name, value, updateData}) {
@@ -65,10 +67,15 @@ function InformationForm({data, setData, submitted, setSubmitted}) {
                 <CustomInput type="tel" id="telephone" name="telephone" value={formData.telephone} 
                 updateData={(value) => handleChange("telephone", value)}/>
             </p>
-
-            <button type="submit"> 
-                <img src={submitSvg} alt="SubmitButton" style={{width: '20px', height: '20px'}}/>
-            </button>
+            <div className="buttonRow">
+                <button type="button">
+                    <img src={clearSvg} alt="ClearFormButton"/>
+                </button>
+            
+                <button type="submit"> 
+                    <img src={submitSvg} alt="SubmitButton"/>
+                </button>
+            </div>
         </form>
     )
 }

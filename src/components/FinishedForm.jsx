@@ -6,7 +6,7 @@ function FinishedForm({setSubmitted, formType, formName}) {
         <div className="finishNoticeForm">
             <p>{formName} Form Submitted. Click Here to Edit!</p>
             <button type="button" onClick={() => setSubmitted(prev => ({...prev, [formType]: false})) }>
-                <img src={editSvg} alt="EditButton" style={{width: '20px', height: '20px'}} />
+                <img src={editSvg} alt="EditButton"/>
             </button>
         </div>
     )

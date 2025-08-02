@@ -22,6 +22,7 @@
 
 .title {
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 form {
@@ -29,6 +30,7 @@ form {
     flex-direction: column;
     background-color: aliceblue;
     border-top: 6px solid gray;
+    padding: 2rem
 }
 
 .noBorderForm {
@@ -55,6 +57,11 @@ textarea {
     min-width: 500px;
     min-height: 100px;
 }
+.buttonRow {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.2rem;
+}
 
 button {
     padding: 15px;
@@ -70,7 +77,8 @@ button {
 
 img {
     filter: invert(100%);
-
+    width: 20px;
+    height: 20px;
 }
 
 /* Specific To Experience Form */
@@ -85,6 +93,12 @@ img {
     flex-direction: column;
     flex-grow: 1;
     max-width: 350px;
+}
+
+/* Specific to Form that has been submitted ("finishedForm") */
+
+.finishNoticeForm {
+    min-height: 25%;
 }
 
 /* Resume Result CSS*/

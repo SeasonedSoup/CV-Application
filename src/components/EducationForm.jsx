@@ -1,5 +1,7 @@
 import { useState } from "react"
 import submitSvg from "../assets/check-bold.svg"
+import clearSvg from "../assets/eraser.svg"
+
 import FinishedForm from "./FinishedForm"
 
 function CustomInput({type, id, name, value, updateData}) {
@@ -52,10 +54,15 @@ function EducationForm({data, setData, submitted, setSubmitted}) {
                 <CustomInput type="date" id="graduationDate" name="graduationDate" value={formData.graduationDate} 
                 updateData={(value) => handleChange("graduationDate", value)}/>
             </p>
+            <div className="buttonRow">
+                <button type="button">
+                    <img src={clearSvg} alt="ClearFormButton"/>
+                </button>
 
-            <button type="submit"> 
-                <img src={submitSvg} alt="SubmitButton" style={{width: '20px', height: '20px'}}/>
-            </button>
+                <button type="submit"> 
+                    <img src={submitSvg} alt="SubmitButton"/>
+                </button>
+            </div>
         </form>
     )
 }

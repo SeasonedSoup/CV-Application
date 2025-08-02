@@ -1,5 +1,6 @@
 import { useState } from "react"
 import submitSvg from "../assets/check-bold.svg"
+import clearSvg from "../assets/eraser.svg"
 
 import FinishedForm from "./FinishedForm"
 
@@ -84,10 +85,16 @@ function ExperienceForm({data, setData, submitted, setSubmitted}) {
             <label htmlFor="jobDescription">Job Description:</label>
             <CustomTextArea name="jobDescription" id="jobDescription" value={formData.jobDescription} 
             updateData={(value) => handleChange("jobDescription", value)}></CustomTextArea>
+            
+            <div className="buttonRow">
+                <button type="button">
+                    <img src={clearSvg} alt="ClearFormButton"/>
+                </button>
 
-            <button type="submit"> 
-                <img src={submitSvg} alt="SubmitButton" style={{width: '20px', height: '20px'}}/>
-            </button>
+                <button type="submit"> 
+                    <img src={submitSvg} alt="SubmitButton"/>
+                </button>
+            </div>
         </form>
     )
 }
