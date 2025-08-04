@@ -44,6 +44,18 @@ function InformationForm({data, setData, submitted, setSubmitted}) {
         setFormData((prev) => ({...prev, [field]: value}))
     }
 
+    const handleReset = () => {
+        setFormData(() => {
+            const cleared = {}
+
+            for (const field in formData) {
+                cleared[field] = ""
+            } 
+
+            return cleared
+        })
+    }
+
     if (submitted) {
         return (
             <FinishedForm setSubmitted={setSubmitted} formType={"info"} formName={"Information"}/>
@@ -51,7 +63,7 @@ function InformationForm({data, setData, submitted, setSubmitted}) {
     }
 
     return (
-        <form className="noBorderForm" onSubmit={handleSubmit}>
+        <form className="noBorderForm" onSubmit={handleSubmit} autoComplete="off">
             <p className="input">
                 <label htmlFor="name">Name: </label>
                 <CustomInput type="text" id="name" name="name" value={formData.name} 
@@ -68,7 +80,7 @@ function InformationForm({data, setData, submitted, setSubmitted}) {
                 updateData={(value) => handleChange("telephone", value)}/>
             </p>
             <div className="buttonRow">
-                <button type="button">
+                <button type="button"  onClick={handleReset}>
                     <img src={clearSvg} alt="ClearFormButton"/>
                 </button>
             

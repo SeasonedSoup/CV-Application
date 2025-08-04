@@ -53,7 +53,7 @@ function ExperienceForm({data, setData, submitted, setSubmitted}) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} autoComplete="off">
             <div className="formContainer">
                 <div className="inputColumn">
                     <p className="input">

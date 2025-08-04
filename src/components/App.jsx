@@ -35,6 +35,20 @@ const App = () => {
     experience: false
   })
 
+const setDatas = [setInfoData, setEducationData, setExperienceData]
+  function handleClearAllData() {
+    console.log("Cleared All Datas")
+    for (let setData in setDatas) {
+        setDatas[setData](prev => {
+            const cleared = {}
+            for (let key in prev) {
+                cleared[key] = ""
+            }  
+            return cleared
+        })
+    }
+  }
+
   return (
     <div className="app">
         <div className="submitForm">
@@ -43,8 +57,14 @@ const App = () => {
           <EducationForm data={educationData} setData={setEducationData} submitted={submitted.education} setSubmitted={setSubmitted}/>
           <ExperienceForm data={experienceData} setData={setExperienceData} submitted={submitted.experience} setSubmitted={setSubmitted}/>
         </div>
-        <div className="resume">
-          <CvResult infoData={infoData} eduData={educationData} expData={experienceData}/>
+        <div className="resumeContainer">
+          <div className="containerHeader">
+            <h1>Resume</h1>
+            <button onClick={handleClearAllData} id="clearResultFormData">Clear Resume</button>
+          </div>
+          <div className="resume">
+            <CvResult infoData={infoData} eduData={educationData} expData={experienceData}/>
+          </div>
         </div>
     </div>
 

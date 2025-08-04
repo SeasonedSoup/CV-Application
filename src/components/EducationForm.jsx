@@ -38,7 +38,7 @@ function EducationForm({data, setData, submitted, setSubmitted}) {
         )
     } 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} autoComplete="off">
             <p className="input">
                 <label htmlFor="schoolName">School Name:</label>
                 <CustomInput type="text" id="schoolName" name="schoolName" value={formData.schoolName} 

@@ -1,6 +1,8 @@
 function CvResult({infoData, eduData, expData}) {
+
+
     return (
-    <div className="cv">    
+    <div className="cv">  
         <div className="header">
             <p className="personName"> {infoData.name}</p>
             <i className="contacts">{infoData.email} | {infoData.telephone}</i>    

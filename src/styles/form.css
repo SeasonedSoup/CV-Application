@@ -67,12 +67,16 @@ button {
     padding: 15px;
     border: solid 2px white;
     background-color: royalblue;
+    color: white;
     border-radius: 12px;
-
-    align-self: flex-end;
+    
     min-width: 100px;
     display: flex;
     justify-content: center;
+}
+/* Specific button styles */
+#clearResultFormData {
+    margin-left: 3rem;
 }
 
 img {
@@ -93,6 +97,7 @@ img {
     flex-direction: column;
     flex-grow: 1;
     max-width: 350px;
+    min-width: 100px;
 }
 
 /* Specific to Form that has been submitted ("finishedForm") */
@@ -102,17 +107,28 @@ img {
 }
 
 /* Resume Result CSS*/
+
+.resumeContainer {
+    flex-basis: 500px;
+    flex-grow: 2;
+    max-width: 800px;
+    padding: 2rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.containerHeader {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
 .resume {
     background-color: white;
     border-radius: 12px;
     border: solid 2px black;
     box-shadow: 8px 14px 8px rgb(0, 0, 0, 0.1);
-
-
-    flex-basis: 500px;
-    flex-grow: 2;
-    max-width: 800px;
-    padding: 2rem;
+    flex: 1;
 }
 .cv {
     display: flex;
