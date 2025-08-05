@@ -10,23 +10,23 @@ import "../styles/form.css"
 const App = () => {
   //THREE STATES FROM THREE DIFFERENT SECTIONS OF THE FORM
   const [infoData, setInfoData] = useState({
-    name:"",
-    email:"",
-    telephone:""
+    name:"Emmette Jared G. Agoncillo",
+    email:"emmetteagoncillo2@gmail.com",
+    telephone:"09766352833"
   })
 
   const [educationData, setEducationData] = useState({
-    schoolName:"",
-    areaOfStudy:"",
-    graduationDate:""
+    schoolName:"NU Fairview",
+    areaOfStudy:"IT",
+    graduationDate:"2028-05-18"
   })
 
   const [experienceData, setExperienceData] = useState({
-    company: "",
-    jobTitle: "",
-    startDate: "",
-    endDate: "",
-    jobDescription:""
+    company: "Google",
+    jobTitle: "Assistant Software Engineer",
+    startDate: "2029-02-20",
+    endDate: "2031-03-27",
+    jobDescription:"Helped clear out some bugs towards final product and support reading documentation and fixing legacy code systems"
   })
 
   const [submitted, setSubmitted] = useState({

@@ -11,7 +11,7 @@ function CvResult({infoData, eduData, expData}) {
             <p className="resultTitle">Education</p>
             <div className="educationHeader">  
                 <h2>{eduData.schoolName}</h2>
-                <p>{eduData.graduationDate}</p>
+                <p className="date">{eduData.graduationDate}</p>
             </div>
             <p className="details">{eduData.areaOfStudy}</p>
         </div>
@@ -20,12 +20,12 @@ function CvResult({infoData, eduData, expData}) {
             <div className="experienceHeader">  
                 <h2>{expData.company}</h2>
                 <div className="dateWorked">
-                    <p>{expData.startDate}</p>
+                    <p className="date">{expData.startDate}</p>
                     –
-                    <p>{expData.endDate}</p>
+                    <p className="date">{expData.endDate}</p>
                 </div>
             </div>
-            <p className="details">{expData.jobTitle}</p>
+            <p className="subHeader">{expData.jobTitle}</p>
             <p className="details">{expData.jobDescription}</p>
         </div>
     </div>
